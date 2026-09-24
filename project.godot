@@ -3,7 +3,7 @@ config_version=5
 
 [application]
 config/name="Блеф"
-config/version="0.1"
+config/version="0.1.0"
 run/main_scene="res://scenes/menus/main.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/ui/logo.png"
@@ -34,4 +34,3 @@ environment/defaults/default_clear_color=Color(0.91, 0.94, 0.90, 1)
 
 [audio]
 driver/enable_input=false
-

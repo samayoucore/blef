@@ -19,7 +19,7 @@ func _ready() -> void:
 	events = read_json("res://data/events/events.json")
 	cosmetics = read_json("res://data/cosmetics/catalog.json")
 	rules = read_json("res://data/items/rules.json")
-	assert(items.size() == 41 and properties.size() == 13 and events.size() == 5)
+	assert(items.size() == 42 and properties.size() == 13 and events.size() == 5)
 
 func read_json(path: String):
 	return JSON.parse_string(FileAccess.get_file_as_string(path))

@@ -15,6 +15,7 @@ var pose_time = 0.0
 var case_active = false
 var pending_pose: Dictionary = {}
 var appearance: Dictionary = {}
+var head_look = Vector2.ZERO
 const HAND_RADIUS = .350
 const HEAD_RADIUS = .45
 const HAND_ASSET = preload("res://assets/characters/hand_rig.glb")
@@ -210,11 +211,16 @@ func open_case() -> void:
 	case_active = true
 	_begin_pose("case_open")
 
+func set_head_look(pitch: float, yaw: float) -> void:
+	head_look = Vector2(clampf(pitch,-.55,.5),clampf(yaw,-1.2,1.2))
+
 func _process(delta: float) -> void:
 	clock += delta
 	pose_time += delta
 	if head:
 		head.position.y = sin(clock*1.5)*.025
+		head.rotation.x = lerpf(head.rotation.x,head_look.x,minf(delta*12.0,1.0))
+		head.rotation.y = lerp_angle(head.rotation.y,head_look.y,minf(delta*12.0,1.0))
 	if pose_time >= Emotes.DURATION and pose not in ["idle","open","thinking"]:
 		case_active = false
 		_begin_pose(pending_pose.get("value","idle"))

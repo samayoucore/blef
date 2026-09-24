@@ -10,6 +10,8 @@ var seating: Array = []
 var own_avatar: BlefAvatar
 var base_rotation = Vector3.ZERO
 var look = Vector2.ZERO
+var look_send_elapsed = 0.0
+var last_sent_look = Vector2.INF
 var camera_drag = false
 var ready_to_ack = false
 var last_turn = -1
@@ -66,6 +68,9 @@ func build(snapshot: Dictionary, local_id: int) -> void:
 			var tag = Forms.label(avatar,info.nickname,Vector3(0,.73,0),29,Color("2d4939"))
 			tag.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	ready_to_ack = true
+	for id in Net.look_angles:
+		var angles: Vector2 = Net.look_angles[id]
+		set_remote_look(int(id),angles.x,angles.y)
 	var hints = CanvasLayer.new()
 	add_child(hints)
 	interaction_hint = Label.new()
@@ -87,6 +92,9 @@ func sync_gestures(roster: Dictionary) -> void:
 		var player = roster.get(local_peer_id,{})
 		own_avatar.apply_appearance(player)
 		own_avatar.set_pose(player.get("gesture","idle"),int(player.get("gesture_seq",-1)))
+
+func set_remote_look(id: int, pitch: float, yaw: float) -> void:
+	if avatars.has(id): avatars[id].set_head_look(pitch,yaw)
 
 func sync(snapshot: Dictionary, personal: Dictionary = {}) -> void:
 	sync_gestures(snapshot.get("players",{}))
@@ -146,7 +154,13 @@ func interact_own_case() -> void:
 	if lid.get("state","") not in ["CLOSED","OPEN"]: return
 	Net.request("case_interact",{"case_id":briefcase.case_id,"seq":int(lid.seq)})
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	look_send_elapsed += delta
+	var current_look = Vector2(-look.y,-look.x)
+	if Net.state in ["DISCUSSION","DISCUSSION_READY","TURN","REVEAL"] and look_send_elapsed >= .05 and current_look.distance_squared_to(last_sent_look) > .00001:
+		Net.send_look(current_look.x,current_look.y)
+		last_sent_look = current_look
+		look_send_elapsed = 0.0
 	if not interaction_hint or not camera: return
 	var briefcase = own_case()
 	interaction_hint.visible = false

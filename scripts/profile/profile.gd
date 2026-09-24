@@ -66,10 +66,14 @@ func save() -> bool:
 	return write_file("profile.json", data)
 
 func validate_appearance() -> void:
+	var has_accessory = false
 	for slot in ["head","eyes","face"]:
 		var key = "equipped_"+slot
 		var cosmetic = Content.cosmetic(str(data.get(key,"")),slot.to_upper())
 		if cosmetic.is_empty() or int(cosmetic.unlock_points) > int(data.rating): data[key] = ""
+		if not str(data[key]).is_empty():
+			if has_accessory: data[key] = ""
+			else: has_accessory = true
 
 func unlock() -> void:
 	for cosmetic in Content.cosmetics:

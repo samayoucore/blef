@@ -4,8 +4,9 @@ signal notice(message: String)
 signal state_changed(state: String)
 signal delta_received(delta: Dictionary)
 signal gestures_received(roster: Dictionary)
-const PROTOCOL = 4
-const REVEAL_VIEW_SECONDS = 10.0
+signal look_received(peer_id: int, pitch: float, yaw: float)
+const PROTOCOL = 5
+const REVEAL_VIEW_SECONDS = 5.0
 const GAME_PORT = 42042
 const RuleScript = preload("res://scripts/game/match_rules.gd")
 const DiscoveryScript = preload("res://scripts/network/discovery.gd")
@@ -28,6 +29,7 @@ var rejected_count = 0
 var _last_request: Dictionary = {}
 var _pending_peers: Dictionary = {}
 var _connect_elapsed = 0.0
+var look_angles: Dictionary = {}
 
 func _ready() -> void:
 	# Clients talk only to the host; no peer relay is needed for this game.
@@ -111,6 +113,7 @@ func leave(message: String = "") -> void:
 	peer = null
 	multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
 	players.clear()
+	look_angles.clear()
 	public_state.clear()
 	private_state.clear()
 	loaded.clear()
@@ -133,10 +136,44 @@ func sanitize_profile(raw: Dictionary) -> Dictionary:
 		var cosmetic = Content.cosmetic(id,slot.to_upper())
 		result["equipped_"+slot] = id if cosmetic.get("slot","") == slot.to_upper() and int(cosmetic.get("unlock_points",0)) <= result.rating else ""
 	if raw.get("collection",[]) is Array:
-		for id in raw.get("collection",[]).slice(0,41):
+		for id in raw.get("collection",[]).slice(0,Content.items.size()):
 			if not Content.item(str(id)).is_empty() and not str(id) in result.collection:
 				result.collection.append(str(id))
+	var has_accessory = false
+	for slot in ["head","eyes","face"]:
+		var key = "equipped_"+slot
+		if not str(result[key]).is_empty():
+			if has_accessory: result[key] = ""
+			else: has_accessory = true
 	return result
+
+func send_look(pitch: float, yaw: float) -> void:
+	if not peer or state not in ["DISCUSSION","DISCUSSION_READY","TURN","REVEAL"]: return
+	if is_nan(pitch) or is_nan(yaw) or is_inf(pitch) or is_inf(yaw): return
+	if is_host:
+		_relay_look(1,pitch,yaw)
+	else:
+		submit_look.rpc_id(1,pitch,yaw)
+
+@rpc("any_peer", "call_remote", "unreliable")
+func submit_look(pitch: float, yaw: float) -> void:
+	if is_host:
+		_relay_look(multiplayer.get_remote_sender_id(),pitch,yaw)
+
+func _relay_look(sender: int, pitch: float, yaw: float) -> void:
+	if not players.has(sender) or not rules or state not in ["DISCUSSION","DISCUSSION_READY","TURN","REVEAL"]: return
+	if is_nan(pitch) or is_nan(yaw) or is_inf(pitch) or is_inf(yaw): return
+	pitch = clampf(pitch,-.55,.5)
+	yaw = clampf(yaw,-1.2,1.2)
+	look_angles[sender] = Vector2(pitch,yaw)
+	look_received.emit(sender,pitch,yaw)
+	for id in players:
+		if id != sender and id != 1 and _can_send(id): receive_look.rpc_id(id,sender,pitch,yaw)
+
+@rpc("authority", "call_remote", "unreliable")
+func receive_look(sender: int, pitch: float, yaw: float) -> void:
+	if not players.has(sender) or is_nan(pitch) or is_nan(yaw) or is_inf(pitch) or is_inf(yaw): return
+	look_received.emit(sender,clampf(pitch,-.55,.5),clampf(yaw,-1.2,1.2))
 
 func _peer_connected(id: int) -> void:
 	if is_host:
@@ -187,6 +224,7 @@ func _peer_disconnected(id: int) -> void:
 		return
 	var nickname = players[id].nickname
 	players.erase(id)
+	look_angles.erase(id)
 	if not state in ["LOBBY","LOBBY_READY","RESULTS"]:
 		generation += 1
 		rules = null
@@ -194,7 +232,7 @@ func _peer_disconnected(id: int) -> void:
 		for p in players.values():
 			p.ready = false
 		_set_state("LOBBY")
-		_send_notice_all(nickname + " отключился. Матч отменён без начисления очков.")
+		_send_notice_all(nickname + " отключился. Матч отменён без начисления ковришек.")
 		discovery.host(advertisement())
 	elif state != "RESULTS":
 		_update_lobby_ready()
@@ -315,6 +353,7 @@ func _update_lobby_ready() -> void:
 
 func _start_match() -> void:
 	generation += 1
+	look_angles.clear()
 	rules = RuleScript.new()
 	rules.setup(players.values(),Content)
 	loaded.clear()

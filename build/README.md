@@ -1,4 +1,4 @@
-# БЛЕФ 0.1 — Windows / BLEF 0.1 — Windows
+# БЛЕФ 0.1.0 — Windows / BLEF 0.1.0 — Windows
 
 ## Русский
 

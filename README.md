@@ -1,8 +1,10 @@
-# БЛЕФ / BLEF — 0.1
+# БЛЕФ / BLEF — 0.1.0
 
 ## Русский
 
-**БЛЕФ** — настольная игра о переговорах и обмене кейсами для **3–8 игроков** в одной локальной сети. Каждый видит содержимое только своего текущего кейса и решает, говорить правду или блефовать. В свой ход можно оставить кейс или обменяться им с другим участником. После последнего круга кейсы вскрываются, игроки получают очки и предметы в коллекцию.
+**БЛЕФ** — настольная игра о переговорах и обмене кейсами для **3–8 игроков** в одной локальной сети. Каждый видит содержимое только своего текущего кейса и решает, говорить правду или блефовать. В свой ход можно оставить кейс или обменяться им с другим участником. После последнего круга кейсы вскрываются, игроки получают ковришки и предметы в коллекцию.
+
+В версии 0.1.0 — 42 карточки, включая легендарную «Лягушку Оли». Во время хода по центру экрана показано, кто ходит; повороты головы игрока видны остальным. После вскрытия карточки остаются на виду 5 секунд до окна итогов. В профиле можно надеть один аксессуар, а все цвета видны без прокрутки.
 
 ### Скачать и запустить
 
@@ -34,7 +36,9 @@
 
 ## English
 
-**BLEF** is a case-trading and negotiation game for **3–8 players** on the same local network. You can see only the item in your current case, so you may tell the truth or bluff. On your turn, keep your case or trade it with another player. After the final round, the cases are revealed and players earn points and collection items. **The game UI is in Russian.**
+**BLEF** is a case-trading and negotiation game for **3–8 players** on the same local network. You can see only the item in your current case, so you may tell the truth or bluff. On your turn, keep your case or trade it with another player. After the final round, the cases are revealed and players earn Kovrishki points and collection items. **The game UI is in Russian.**
+
+Version 0.1.0 has 42 cards, including the legendary “Olya's Frog.” A centered label shows whose turn it is, and other players can see your head movements. Revealed cards remain visible for 5 seconds before the results screen. You can equip one accessory at a time, and every color is visible without scrolling.
 
 ### Download and play
 

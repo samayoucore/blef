@@ -57,6 +57,7 @@ func _animate(over: bool) -> void:
 	transition.tween_property(self,"self_modulate",Color(1.10,1.10,1.10) if over and not disabled else Color.WHITE,0.12)
 
 func _make_custom_tooltip(for_text: String) -> Object:
+	if for_text.strip_edges().is_empty(): return null
 	var panel = GlassPanel.new()
 	panel.padding = 16
 	panel.corner_radius = 14

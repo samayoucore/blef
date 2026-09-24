@@ -67,9 +67,14 @@ func _character() -> void:
 	nickname.text_changed.connect(func(value): draft.nickname = value)
 	var fields = UI.scroll(box)
 	fields.add_theme_constant_override("separation",14)
-	var colors = _carousel(fields,"Цвет")
+	UI.label(fields,"Цвет",26)
+	var colors = GridContainer.new()
+	colors.columns = Content.COLORS.size()
+	colors.add_theme_constant_override("h_separation",6)
+	colors.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	fields.add_child(colors)
 	for i in Content.COLORS.size():
-		var button = _choice(colors,"head_color_id",i,Content.COLOR_NAMES[i],Vector2(62,66))
+		var button = _choice(colors,"head_color_id",i,Content.COLOR_NAMES[i],Vector2(42,50))
 		var swatch = Control.new()
 		button.add_child(swatch)
 		UI.full(swatch)
@@ -85,7 +90,7 @@ func _character() -> void:
 		button.add_child(badge)
 		UI.full(badge)
 	var accessories = _carousel(fields,"Аксессуары")
-	var clear = _choice(accessories,"clear","","Без аксессуаров",Vector2(80,84))
+	var clear = _choice(accessories,"clear","","Без",Vector2(80,84))
 	UI.label(clear,"Без",17,UI.MUTED).set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	for cosmetic in Content.cosmetics:
 		var slot = "equipped_" + str(cosmetic.slot).to_lower()
@@ -106,14 +111,7 @@ func _character() -> void:
 			lock.offset_top = -14
 			lock.offset_right = 14
 			lock.offset_bottom = 14
-			button.tooltip_text = "Нужно %s очков,\nчтобы разблокировать" % Content.number(cosmetic.unlock_points)
-	var slot_clears = UI.hbox(fields,8)
-	for entry in [["head","Без шапки"],["eyes","Без очков"],["face","Без маски"]]:
-		var empty_slot = _choice(slot_clears,"equipped_"+entry[0],"",entry[1],Vector2(100,32))
-		empty_slot.set_meta("empty_slot",entry[0])
-		empty_slot.text = entry[1]
-		empty_slot.add_theme_font_size_override("font_size",14)
-		empty_slot.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			button.tooltip_text = "Нужно %s ковришек,\nчтобы разблокировать" % Content.number(cosmetic.unlock_points)
 	var footer = UI.hbox(box,16)
 	UI.button(footer,"Сбросить",_reset).size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	UI.button(footer,"Сохранить",_save,true).size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -156,11 +154,11 @@ func _update_selection() -> void:
 				child.queue_redraw()
 
 func _equip(slot: String, id: String) -> void:
-	if id.is_empty():
-		draft[slot] = ""
-		return
+	if id.is_empty(): return
 	var cosmetic = Content.cosmetic(id,slot.trim_prefix("equipped_").to_upper())
-	if not cosmetic.is_empty() and int(Profile.data.rating) >= int(cosmetic.unlock_points): draft[slot] = id
+	if not cosmetic.is_empty() and int(Profile.data.rating) >= int(cosmetic.unlock_points):
+		for key in ["equipped_head","equipped_eyes","equipped_face"]: draft[key] = ""
+		draft[slot] = id
 
 func _reset() -> void:
 	draft.nickname = Profile.data.nickname
@@ -223,7 +221,7 @@ func _stats() -> void:
 	center.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	body.add_child(center)
 	var row = UI.hbox(center,22)
-	for entry in [["Общий рейтинг",Profile.data.rating,"bar-chart"],["Сыграно матчей",Profile.data.matches_played,"game-controller"],["Побед",Profile.data.wins,"trophy"]]:
+	for entry in [["Ковришки",Profile.data.rating,"bar-chart"],["Сыграно матчей",Profile.data.matches_played,"game-controller"],["Побед",Profile.data.wins,"trophy"]]:
 		var panel = UI.glass(row,32,22)
 		panel.custom_minimum_size = Vector2(310,280)
 		var box = UI.vbox(panel,22)

@@ -46,6 +46,9 @@ func _ready() -> void:
 	Net.gestures_received.connect(func(_roster):
 		if room: room.sync(Net.public_state,Net.private_state)
 	)
+	Net.look_received.connect(func(id, pitch, yaw):
+		if room: room.set_remote_look(id,pitch,yaw)
+	)
 	Net.notice.connect(show_notice)
 	Profile.save_failed.connect(show_notice)
 	Net.discovery.changed.connect(_update_search)
@@ -310,7 +313,7 @@ func _lobby() -> void:
 		title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		title.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		if int(id) == 1: name_row.add_child(preload("res://scripts/ui/status_mark.gd").new(true))
-		UI.label(description,Content.number(player.rating)+" очков",15,UI.MUTED)
+		UI.label(description,Content.number(player.rating)+" ковришек",15,UI.MUTED)
 		if player.ready: row.add_child(preload("res://scripts/ui/status_mark.gd").new())
 		else: UI.label(row,"Не готов",14,UI.MUTED)
 	for i in maxi(0,mini(Net.max_players,6)-Net.players.size()):
@@ -424,7 +427,7 @@ func _setting_row(parent: Node, title: String) -> HBoxContainer:
 	return row
 
 func _results() -> void:
-	var outer = page("Кейсы открыты", "Матч завершён. Очки и финальный предмет сохранены в вашем профиле.",false)
+	var outer = page("Кейсы открыты", "Матч завершён. Ковришки и финальный предмет сохранены в вашем профиле.",false)
 	var panel = UI.panel(outer)
 	panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	var box = UI.vbox(panel,12)
@@ -461,12 +464,12 @@ func _results() -> void:
 		var score = UI.vbox(row,2)
 		UI.label(score,"+"+Content.number(result.score),30,UI.GREEN)
 		UI.label(score,"Итоговая стоимость",13,UI.MUTED)
-		UI.label(score,"Рейтинг: "+Content.number(p.get("rating",0)),14,UI.MUTED)
+		UI.label(score,"Ковришки: "+Content.number(p.get("rating",0)),14,UI.MUTED)
 	if not Profile.last_rewards.is_empty():
 		UI.label(box,"Новая косметика: " + ", ".join(Profile.last_rewards),18,UI.GREEN,true)
 	var bottom = UI.hbox(box,18)
 	var returned_count = Net.public_state.get("returned",{}).size()
-	UI.label(bottom,"Готовы вернуться в лобби: %d/%d   ·   Коллекция %d/41" % [returned_count,Net.players.size(),Profile.data.collection.size()],17,UI.MUTED).size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	UI.label(bottom,"Готовы вернуться в лобби: %d/%d   ·   Коллекция %d/%d" % [returned_count,Net.players.size(),Profile.data.collection.size(),Content.items.size()],17,UI.MUTED).size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var return_button = UI.button(bottom,"В ЛОББИ",func(): Net.request("return"),true)
 	return_button.disabled = Net.public_state.get("returned",{}).get(Net.my_id(),false)
 	UI.button(bottom,"Выйти",func(): Net.leave())

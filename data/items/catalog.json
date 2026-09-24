@@ -326,5 +326,13 @@
     "base_value": 500,
     "description": "где копать?",
     "category": "Офис"
+  },
+  {
+    "id": "42",
+    "name": "Лягушка Оли",
+    "rarity": "Легендарный",
+    "base_value": 1500,
+    "description": "вооооо ТВАРИЩЩА хорошААААА",
+    "category": "Офис"
   }
 ]

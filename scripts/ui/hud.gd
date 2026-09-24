@@ -10,31 +10,26 @@ func build(owner_app: Node) -> void:
 	var snapshot = Net.public_state
 	var personal = Net.private_state
 	var phase = Net.state
-	var order_panel = UI.glass(self,16,18)
-	order_panel.name = "TurnOrder"
-	order_panel.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
-	order_panel.offset_left = -290
-	order_panel.offset_right = -24
-	order_panel.offset_top = 24
-	var order_box = UI.vbox(order_panel,6)
-	UI.label(order_box,"Порядок хода",24)
-	var order = snapshot.get("order",[])
-	order_panel.visible = not order.is_empty()
-	for i in order.size():
-		var id = int(order[i])
-		var player = Net.players.get(id,{})
-		var active = id == int(snapshot.get("active_peer",0))
-		var item = PanelContainer.new()
-		item.add_theme_stylebox_override("panel",UI.style(Color(0.14,0.21,0.15,0.7) if active else Color.TRANSPARENT,10,UI.GREEN if active else Color.TRANSPARENT,5))
-		order_box.add_child(item)
-		var row = UI.hbox(item,8)
-		UI.label(row,str(i+1),19,UI.GREEN if active else UI.INK)
-		row.add_child(AvatarBadge.new(player,32))
-		var title = UI.label(row,player.get("nickname","") + (" (Вы)" if id == Net.my_id() else ""),17)
-		title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		title.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-		if snapshot.get("ready",{}).get(id,false) and phase in ["DISCUSSION","DISCUSSION_READY"]:
-			row.add_child(preload("res://scripts/ui/status_mark.gd").new())
+	if phase == "TURN":
+		var active_id = int(snapshot.get("active_peer",0))
+		var turn_panel = UI.glass(self,14,18,.86)
+		turn_panel.name = "TurnIndicator"
+		turn_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		turn_panel.anchor_left = .5
+		turn_panel.anchor_right = .5
+		turn_panel.anchor_top = .5
+		turn_panel.anchor_bottom = .5
+		turn_panel.custom_minimum_size = Vector2(340,72)
+		turn_panel.offset_left = -170
+		turn_panel.offset_right = 170
+		turn_panel.offset_top = -36
+		turn_panel.offset_bottom = 36
+		var turn_text = "ваш ход" if active_id == Net.my_id() else "ходит " + str(Net.players.get(active_id,{}).get("nickname","игрок"))
+		var turn_label = UI.label(turn_panel,turn_text,28,UI.GREEN if active_id == Net.my_id() else UI.INK)
+		turn_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		turn_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		turn_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		turn_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var phase_panel = UI.glass(self,18,18)
 	phase_panel.name = "PhaseInfo"
 	phase_panel.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
@@ -52,7 +47,6 @@ func build(owner_app: Node) -> void:
 		UI.label(phase_box,"Круг %d из %d" % [snapshot.get("round_number",1),snapshot.get("total_rounds",1)],15,UI.GREEN)
 	var descriptions = {"DISCUSSION":"Убеждайте, задавайте вопросы, выясняйте, кто говорит правду!", "DISCUSSION_READY":"Все готовы. Сейчас начнутся ходы.", "TURN":"Решите: оставить свой кейс или обменяться.", "REVEAL":"Кейсы открываются. Узнаём, что внутри!"}
 	var description = descriptions.get(phase,"Подготавливаем следующий этап игры…")
-	if phase == "TURN": description = ("Ваш ход. " if int(snapshot.get("active_peer",0)) == Net.my_id() else "Ходит " + Net.players.get(int(snapshot.get("active_peer",0)),{}).get("nickname","Игрок") + ". ") + description
 	UI.label(phase_box,description,17,UI.MUTED,true)
 	var actions = UI.vbox(self,10)
 	actions.name = "MatchActions"
@@ -176,7 +170,7 @@ func _public_notes(notes: Array) -> void:
 func _leave_dialog() -> void:
 	app.hud_dialog = "leave"
 	var list = _modal("Выйти из матча?")
-	UI.label(list,"Текущий матч будет отменён для всех. Очки за незавершённый матч не начисляются.",20,UI.INK,true)
+	UI.label(list,"Текущий матч будет отменён для всех. Ковришки за незавершённый матч не начисляются.",20,UI.INK,true)
 	UI.button(list,"Выйти",func(): Net.leave(),true)
 
 func _journal() -> void:
