@@ -1,0 +1,119 @@
+[
+  {
+    "id": "peek",
+    "name": "Мильпупс",
+    "description": "Один раз за обсуждение: посмотреть полную карточку одного соперника.",
+    "effect": "peek",
+    "amount": 0,
+    "positive": true,
+    "cap": -1
+  },
+  {
+    "id": "kept",
+    "name": "Работает у меня",
+    "description": "+250, если финальный владелец оставил именно этот предмет.",
+    "effect": "kept",
+    "amount": 250,
+    "positive": true,
+    "cap": -1
+  },
+  {
+    "id": "resale",
+    "name": "На перепродажу",
+    "description": "+100 за смену владельца, максимум +300.",
+    "effect": "transfer",
+    "amount": 100,
+    "positive": true,
+    "cap": 300
+  },
+  {
+    "id": "new",
+    "name": "Новенькое",
+    "description": "+200, если у финального владельца предмета ещё нет в коллекции.",
+    "effect": "new",
+    "amount": 200,
+    "positive": true,
+    "cap": -1
+  },
+  {
+    "id": "quiet",
+    "name": "Тихий режим",
+    "description": "Защита от публичного аудита и утечки цены. Приватные проверки работают.",
+    "effect": "quiet",
+    "amount": 0,
+    "positive": true,
+    "cap": -1
+  },
+  {
+    "id": "loyal",
+    "name": "Бонус за верность",
+    "description": "+300, если вернулся к первоначальному владельцу или не покидал его.",
+    "effect": "original",
+    "amount": 300,
+    "positive": true,
+    "cap": -1
+  },
+  {
+    "id": "insider",
+    "name": "Инсайд",
+    "description": "В начале обсуждения узнать редкость одного чужого предмета.",
+    "effect": "insider",
+    "amount": 0,
+    "positive": true,
+    "cap": -1
+  },
+  {
+    "id": "exposed",
+    "name": "Засветился",
+    "description": "Название публично в начале обсуждения. Цена и свойство скрыты.",
+    "effect": "exposed",
+    "amount": 0,
+    "positive": false,
+    "cap": -1
+  },
+  {
+    "id": "leaked",
+    "name": "Палево",
+    "description": "Один случайный соперник получает полную карточку.",
+    "effect": "leaked",
+    "amount": 0,
+    "positive": false,
+    "cap": -1
+  },
+  {
+    "id": "leaky",
+    "name": "Дырявое ведро",
+    "description": "−100 за каждую смену владельца. Итог не ниже нуля.",
+    "effect": "transfer",
+    "amount": -100,
+    "positive": false,
+    "cap": -1
+  },
+  {
+    "id": "spoiled",
+    "name": "Протухло",
+    "description": "−250, если финальный владелец совпадает с первоначальным.",
+    "effect": "original",
+    "amount": -250,
+    "positive": false,
+    "cap": -1
+  },
+  {
+    "id": "production",
+    "name": "Улетело в прод",
+    "description": "−300, если хотя бы один раз сменил владельца.",
+    "effect": "moved",
+    "amount": -300,
+    "positive": false,
+    "cap": -1
+  },
+  {
+    "id": "cursed",
+    "name": "Проклятый лот",
+    "description": "На своём ходу владелец обязан обменяться. Дополнительного хода нет.",
+    "effect": "forced",
+    "amount": 0,
+    "positive": false,
+    "cap": -1
+  }
+]

@@ -1,0 +1,330 @@
+[
+  {
+    "id": "1",
+    "name": "Кола Zеро",
+    "rarity": "Обычный",
+    "base_value": 200,
+    "description": "не пей на ночь",
+    "category": "Офис"
+  },
+  {
+    "id": "2",
+    "name": "Пингвин Тукс",
+    "rarity": "Легендарный",
+    "base_value": 1500,
+    "description": "I use Atrix btw",
+    "category": "Офис"
+  },
+  {
+    "id": "3",
+    "name": "Кактус Кирилла",
+    "rarity": "Легендарный",
+    "base_value": 1500,
+    "description": "норовит сбежать к хозяину",
+    "category": "Офис"
+  },
+  {
+    "id": "4",
+    "name": "Кликер клавиша Z",
+    "rarity": "Легендарный",
+    "base_value": 1500,
+    "description": "а куда делась кнопка \"Я\"?",
+    "category": "Офис"
+  },
+  {
+    "id": "5",
+    "name": "Блокнот с человеком-пауком",
+    "rarity": "Обычный",
+    "base_value": 150,
+    "description": "а если я сальто сделаю, наклейку дадут?",
+    "category": "Офис"
+  },
+  {
+    "id": "6",
+    "name": "Ерундопель",
+    "rarity": "Редкий",
+    "base_value": 400,
+    "description": "че...",
+    "category": "Офис"
+  },
+  {
+    "id": "7",
+    "name": "Эспандер желтый",
+    "rarity": "Обычный",
+    "base_value": 100,
+    "description": "для женщин и детей",
+    "category": "Офис"
+  },
+  {
+    "id": "8",
+    "name": "Эспандер синий",
+    "rarity": "Обычный",
+    "base_value": 100,
+    "description": "для сильных женщин и детей",
+    "category": "Офис"
+  },
+  {
+    "id": "9",
+    "name": "Сломанный эспандер",
+    "rarity": "Обычный",
+    "base_value": 200,
+    "description": "для очень сильных женщин и детей",
+    "category": "Офис"
+  },
+  {
+    "id": "10",
+    "name": "Невозможный эспандер",
+    "rarity": "Эпический",
+    "base_value": 900,
+    "description": "эскалибур вытащить проще",
+    "category": "Офис"
+  },
+  {
+    "id": "11",
+    "name": "Святой хомяк",
+    "rarity": "Легендарный",
+    "base_value": 1500,
+    "description": "пусть хранит он нас и наш код",
+    "category": "Офис"
+  },
+  {
+    "id": "12",
+    "name": "Творог савушкин 0%",
+    "rarity": "Обычный",
+    "base_value": 300,
+    "description": "для считающих калории",
+    "category": "Офис"
+  },
+  {
+    "id": "13",
+    "name": "Пульт от кондиционера",
+    "rarity": "Редкий",
+    "base_value": 500,
+    "description": "зачем, если кондей не пашет",
+    "category": "Офис"
+  },
+  {
+    "id": "14",
+    "name": "Зеленый шнур",
+    "rarity": "Обычный",
+    "base_value": 150,
+    "description": "\"Меня бесит, что он постоянно падает мне в ноги\" (c)Коля",
+    "category": "Офис"
+  },
+  {
+    "id": "15",
+    "name": "Забитый толкан",
+    "rarity": "Эпический",
+    "base_value": 800,
+    "description": "опять?!",
+    "category": "Офис"
+  },
+  {
+    "id": "16",
+    "name": "Ручка СофтЭксперт",
+    "rarity": "Обычный",
+    "base_value": 100,
+    "description": "а как писать...",
+    "category": "Офис"
+  },
+  {
+    "id": "17",
+    "name": "Кубок 1С:Проект Года",
+    "rarity": "Легендарный",
+    "base_value": 1500,
+    "description": "а ты уже голосовал?",
+    "category": "Офис"
+  },
+  {
+    "id": "18",
+    "name": "Сообщение \"СРОЧНО\"",
+    "rarity": "Обычный",
+    "base_value": 300,
+    "description": "будет сделано через месяц",
+    "category": "Офис"
+  },
+  {
+    "id": "19",
+    "name": "Двойное мусорное ведро",
+    "rarity": "Редкий",
+    "base_value": 700,
+    "description": "дырявое ведро в дырявом ведре",
+    "category": "Офис"
+  },
+  {
+    "id": "20",
+    "name": "Разбитая входная дверь",
+    "rarity": "Эпический",
+    "base_value": 850,
+    "description": "унесенные ветром",
+    "category": "Офис"
+  },
+  {
+    "id": "21",
+    "name": "Теннисный стол",
+    "rarity": "Обычный",
+    "base_value": 100,
+    "description": "\"Я там никогда не был\" (с)Лёша",
+    "category": "Офис"
+  },
+  {
+    "id": "22",
+    "name": "Карта до турников",
+    "rarity": "Редкий",
+    "base_value": 600,
+    "description": "должен уже вслепую находить!",
+    "category": "Офис"
+  },
+  {
+    "id": "23",
+    "name": "Белка",
+    "rarity": "Эпический",
+    "base_value": 1000,
+    "description": "фоткай быстрее",
+    "category": "Офис"
+  },
+  {
+    "id": "24",
+    "name": "Шаурма без соуса",
+    "rarity": "Эпический",
+    "base_value": 1200,
+    "description": "сухая то есть?",
+    "category": "Офис"
+  },
+  {
+    "id": "25",
+    "name": "2 очень разных монитора",
+    "rarity": "Редкий",
+    "base_value": 450,
+    "description": "бешенство Машки",
+    "category": "Офис"
+  },
+  {
+    "id": "26",
+    "name": "Пицца на др из Кубы (очень жирная и майонезная)",
+    "rarity": "Эпический",
+    "base_value": 1000,
+    "description": "пусть люди едят",
+    "category": "Офис"
+  },
+  {
+    "id": "27",
+    "name": "Контейнер с сосисками и макаронами",
+    "rarity": "Обычный",
+    "base_value": 100,
+    "description": "может за шаурмой?",
+    "category": "Офис"
+  },
+  {
+    "id": "28",
+    "name": "БитрЕкс24",
+    "rarity": "Редкий",
+    "base_value": 550,
+    "description": "1ass",
+    "category": "Офис"
+  },
+  {
+    "id": "29",
+    "name": "Зеленый диван",
+    "rarity": "Обычный",
+    "base_value": 100,
+    "description": "\"Оля посыпалась\" (c)Оля",
+    "category": "Офис"
+  },
+  {
+    "id": "30",
+    "name": "Шмель Пётр",
+    "rarity": "Редкий",
+    "base_value": 700,
+    "description": "мильпупс",
+    "category": "Офис"
+  },
+  {
+    "id": "31",
+    "name": "Осьминог Тамара",
+    "rarity": "Редкий",
+    "base_value": 700,
+    "description": "ТАМАРАААААА",
+    "category": "Офис"
+  },
+  {
+    "id": "32",
+    "name": "Обои с летающей коровой",
+    "rarity": "Эпический",
+    "base_value": 1200,
+    "description": "ты больше никогда их не увидишь",
+    "category": "Офис"
+  },
+  {
+    "id": "33",
+    "name": "Обои Zелень",
+    "rarity": "Редкий",
+    "base_value": 400,
+    "description": "виндоус экспириенс",
+    "category": "Офис"
+  },
+  {
+    "id": "34",
+    "name": "Собака-арбуз",
+    "rarity": "Редкий",
+    "base_value": 500,
+    "description": "не думайте",
+    "category": "Офис"
+  },
+  {
+    "id": "35",
+    "name": "Хлопок в вазе",
+    "rarity": "Обычный",
+    "base_value": 300,
+    "description": "солнце еще высоко, пашем",
+    "category": "Офис"
+  },
+  {
+    "id": "36",
+    "name": "Подписка ChatGPT PRO",
+    "rarity": "Обычный",
+    "base_value": 150,
+    "description": "щащаща корпоративку купим",
+    "category": "Офис"
+  },
+  {
+    "id": "37",
+    "name": "Сыр из ярче",
+    "rarity": "Обычный",
+    "base_value": 150,
+    "description": "60 ГРАММ БЕЛКА",
+    "category": "Офис"
+  },
+  {
+    "id": "38",
+    "name": "Онигири",
+    "rarity": "Редкий",
+    "base_value": 450,
+    "description": "kawaii",
+    "category": "Офис"
+  },
+  {
+    "id": "39",
+    "name": "Спамер Илья",
+    "rarity": "Эпический",
+    "base_value": 800,
+    "description": "машина или человек?",
+    "category": "Офис"
+  },
+  {
+    "id": "40",
+    "name": "Недостройка",
+    "rarity": "Эпический",
+    "base_value": 1000,
+    "description": "дофаминовая яма",
+    "category": "Офис"
+  },
+  {
+    "id": "41",
+    "name": "Крыша недостройки",
+    "rarity": "Редкий",
+    "base_value": 500,
+    "description": "где копать?",
+    "category": "Офис"
+  }
+]

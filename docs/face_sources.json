@@ -1,0 +1,102 @@
+[
+  {
+    "id": "normal",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_14 PM (1).png",
+    "runtime": "assets/character/faces/face_normal.png",
+    "sha256": "2cc20acc057a4ff0051a37011804f80264d3640b4b8fe8f9f422c5d14bf66a35",
+    "canvas": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "id": "wink",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_15 PM (2).png",
+    "runtime": "assets/character/faces/face_wink.png",
+    "sha256": "a5dd4d9323f8b973523a8f5161e45ec1035f39ccf7b85621bdb82ad580abf3d0",
+    "canvas": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "id": "serious",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_15 PM (3).png",
+    "runtime": "assets/character/faces/face_serious.png",
+    "sha256": "ec3ee746c608189c6ddfd2bccffbc073ac46a0a10ee40216c1e749f716fd66a1",
+    "canvas": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "id": "joyful",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_16 PM (4).png",
+    "runtime": "assets/character/faces/face_joyful.png",
+    "sha256": "9771e2972cb60f20d7759c61bf6cfe8ab7600eda6238ab14bb0092455b956f6c",
+    "canvas": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "id": "doubt",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_16 PM (5).png",
+    "runtime": "assets/character/faces/face_doubt.png",
+    "sha256": "5cc521d3777a9a4d0b90db5775152d65f4489512034a02c34ff0486d1ee097ae",
+    "canvas": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "id": "surprised",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_17 PM (6).png",
+    "runtime": "assets/character/faces/face_surprised.png",
+    "sha256": "919f6134db77a41967fd2a7cf0e75a9d7990e78effb3f061d790f197c1a8ec00",
+    "canvas": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "id": "angry",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_17 PM (7).png",
+    "runtime": "assets/character/faces/face_angry.png",
+    "sha256": "a6a2455d68a60a99a0775f19e011c0cec018abed1709ee4990b669a891fdb123",
+    "canvas": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "id": "happy",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_17 PM (8).png",
+    "runtime": "assets/character/faces/face_happy.png",
+    "sha256": "f5f93082018d9f031c15e82094dc4115c35eaa52bdc4e1d2c9328bba024bde8b",
+    "canvas": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "id": "bored",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_17 PM (9).png",
+    "runtime": "assets/character/faces/face_bored.png",
+    "sha256": "713fdd0eabc6c72aab089a70d73bfb36f006c9c57633caabe743ee9d945a5459",
+    "canvas": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "id": "confident",
+    "source": "Визуальный стиль/лица/ChatGPT Image Sep 16, 2026, 05_06_18 PM (10).png",
+    "runtime": "assets/character/faces/face_confident.png",
+    "sha256": "aa4b40b48fe9e0fa95a0e378a49523ebdcd6931af8a5d6d471266215a84c8069",
+    "canvas": [
+      1254,
+      1254
+    ]
+  }
+]

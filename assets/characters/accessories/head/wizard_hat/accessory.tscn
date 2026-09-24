@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/characters/accessories/head/wizard_hat/model.glb" id="1_fcg0a"]
+
+[node name="Accessory" type="Node3D" unique_id=182317342]
+
+[node name="NormalizedModel" type="Node3D" parent="." unique_id=632732345]
+transform = Transform3D(0.24481007, 0, 0, 0, 0.24481007, 0, 0, 0, 0.24481007, -5.667462e-05, -0.15979242, 0.0030380748)
+
+[node name="model" type="Node3D" parent="NormalizedModel" unique_id=597814559 instance=ExtResource("1_fcg0a")]

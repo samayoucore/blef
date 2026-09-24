@@ -1,0 +1,133 @@
+{
+  "loungeSofa": {
+    "path": "res://assets/environment/kenney_furniture/loungeSofa.glb",
+    "source_member": "Models/GLTF format/loungeSofa.glb",
+    "license": "CC0-1.0"
+  },
+  "pillow": {
+    "path": "res://assets/environment/kenney_furniture/pillow.glb",
+    "source_member": "Models/GLTF format/pillow.glb",
+    "license": "CC0-1.0"
+  },
+  "kitchenCoffeeMachine": {
+    "path": "res://assets/environment/kenney_furniture/kitchenCoffeeMachine.glb",
+    "source_member": "Models/GLTF format/kitchenCoffeeMachine.glb",
+    "license": "CC0-1.0"
+  },
+  "tableCoffee": {
+    "path": "res://assets/environment/kenney_furniture/tableCoffee.glb",
+    "source_member": "Models/GLTF format/tableCoffee.glb",
+    "license": "CC0-1.0"
+  },
+  "apple": {
+    "path": "res://assets/environment/kenney_food/apple.glb",
+    "source_member": "Models/GLB format/apple.glb",
+    "license": "CC0-1.0"
+  },
+  "banana": {
+    "path": "res://assets/environment/kenney_food/banana.glb",
+    "source_member": "Models/GLB format/banana.glb",
+    "license": "CC0-1.0"
+  },
+  "orange": {
+    "path": "res://assets/environment/kenney_food/orange.glb",
+    "source_member": "Models/GLB format/orange.glb",
+    "license": "CC0-1.0"
+  },
+  "croissant": {
+    "path": "res://assets/environment/kenney_food/croissant.glb",
+    "source_member": "Models/GLB format/croissant.glb",
+    "license": "CC0-1.0"
+  },
+  "plate": {
+    "path": "res://assets/environment/kenney_food/plate.glb",
+    "source_member": "Models/GLB format/plate.glb",
+    "license": "CC0-1.0"
+  },
+  "bowl": {
+    "path": "res://assets/environment/kenney_food/bowl.glb",
+    "source_member": "Models/GLB format/bowl.glb",
+    "license": "CC0-1.0"
+  },
+  "animal-cat": {
+    "path": "res://assets/environment/kenney_cube_pets/animal-cat.glb",
+    "source_member": "Models/GLB format/animal-cat.glb",
+    "license": "CC0-1.0"
+  },
+  "animal-panda": {
+    "path": "res://assets/environment/kenney_cube_pets/animal-panda.glb",
+    "source_member": "Models/GLB format/animal-panda.glb",
+    "license": "CC0-1.0"
+  },
+  "animal-penguin": {
+    "path": "res://assets/environment/kenney_cube_pets/animal-penguin.glb",
+    "source_member": "Models/GLB format/animal-penguin.glb",
+    "license": "CC0-1.0"
+  },
+  "DeskPlant": {
+    "path": "res://assets/environment/nappin_office/DeskPlant.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)DeskPlant.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "KitchenModule": {
+    "path": "res://assets/environment/nappin_office/KitchenModule.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)KitchenModule.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "BigDrawer": {
+    "path": "res://assets/environment/nappin_office/BigDrawer.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)BigDrawer.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "Plant2": {
+    "path": "res://assets/environment/nappin_office/Plant2.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)Plant2.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "PlantBox": {
+    "path": "res://assets/environment/nappin_office/PlantBox.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)PlantBox.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "CoffePot": {
+    "path": "res://assets/environment/nappin_office/CoffePot.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)CoffePot.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "Plant1": {
+    "path": "res://assets/environment/nappin_office/Plant1.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)Plant1.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "BookPile1": {
+    "path": "res://assets/environment/nappin_office/BookPile1.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)BookPile1.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "CeilingLight1": {
+    "path": "res://assets/environment/nappin_office/CeilingLight1.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)CeilingLight1.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "Mug": {
+    "path": "res://assets/environment/nappin_office/Mug.glb",
+    "source_member": "Assets/nappin/Office Props Softpack/Models/(Msh)Mug.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  },
+  "OfficeChair": {
+    "path": "res://assets/environment/rr_office/OfficeChair.glb",
+    "source_member": "export_LPOP_FULL/Chair_Office_Green.fbx",
+    "license": "not specified",
+    "use_note": "User approved free files for local project; see CREDITS.md"
+  }
+}

@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/characters/accessories/head/stylised_hat/model.glb" id="1_sbvmc"]
+
+[node name="Accessory" type="Node3D" unique_id=1055343437]
+
+[node name="NormalizedModel" type="Node3D" parent="." unique_id=478575475]
+transform = Transform3D(0.3821974, 0, 0, 0, 0.3821974, 0, 0, 0, 0.3821974, -1.2821314, -0.068530604, -0.3895159)
+
+[node name="Root Scene" type="Node3D" parent="NormalizedModel" unique_id=554545227 instance=ExtResource("1_sbvmc")]

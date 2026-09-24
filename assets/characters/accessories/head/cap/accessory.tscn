@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/characters/accessories/head/cap/model.glb" id="1_vhow3"]
+
+[node name="Accessory" type="Node3D" unique_id=332021818]
+
+[node name="NormalizedModel" type="Node3D" parent="." unique_id=1601835209]
+transform = Transform3D(-7.9857344e-08, 0, -1.8269231, 0, 1.8269231, 0, 1.8269231, 0, -7.9857344e-08, 0, 0.0041233655, -0.19999784)
+
+[node name="model" type="Node3D" parent="NormalizedModel" unique_id=236350993 instance=ExtResource("1_vhow3")]

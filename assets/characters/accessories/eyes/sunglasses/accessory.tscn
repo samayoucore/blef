@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/characters/accessories/eyes/sunglasses/model.glb" id="1_dvspn"]
+
+[node name="Accessory" type="Node3D" unique_id=1005633331]
+
+[node name="NormalizedModel" type="Node3D" parent="." unique_id=764862628]
+transform = Transform3D(-1.0397943, 0, -9.090171e-08, 0, 1.0397943, 0, 9.090171e-08, 0, -1.0397943, 0, -0.005294116, -0.01856973)
+
+[node name="model" type="Node3D" parent="NormalizedModel" unique_id=1066538184 instance=ExtResource("1_dvspn")]

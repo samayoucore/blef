@@ -1,0 +1,5 @@
+.godot/
+tmp/
+*.log
+/build/BLEF.exe
+/build/BLEF-0.1-Windows.zip

@@ -1,0 +1,39 @@
+{
+  "author": "Original procedural modelling in Blender for BLEF",
+  "blender": "5.2.1 LTS",
+  "head_radius": 0.45,
+  "hand_vertex_count": 5898,
+  "hand_triangles": 11792,
+  "hand_bones": 16,
+  "clips": [
+    "idle",
+    "open",
+    "wave",
+    "thumbs_up",
+    "point",
+    "shrug",
+    "clap",
+    "rock",
+    "case_open"
+  ],
+  "faces": [
+    "Neutral",
+    "Joy",
+    "Wink",
+    "Serious",
+    "Suspicious",
+    "Angry",
+    "Smug",
+    "Bored",
+    "Surprised",
+    "Sarcastic",
+    "Happy",
+    "Cunning"
+  ],
+  "measured_hand_radius": 0.2945969322872461,
+  "materials": {
+    "skin_roughness": 0.86,
+    "pupil_brow_roughness": 0.34
+  },
+  "textures": "None; solid material colors only"
+}

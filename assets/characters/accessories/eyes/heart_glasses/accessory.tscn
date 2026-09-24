@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/characters/accessories/eyes/heart_glasses/model.glb" id="1_if1vj"]
+
+[node name="Accessory" type="Node3D" unique_id=724265475]
+
+[node name="NormalizedModel" type="Node3D" parent="." unique_id=182369449]
+transform = Transform3D(-3.616016e-08, 0, -0.82724804, 0, 0.82724804, 0, 0.82724804, 0, -3.616016e-08, 0, -0.15540847, -0.033231404)
+
+[node name="model" type="Node3D" parent="NormalizedModel" unique_id=1836327864 instance=ExtResource("1_if1vj")]

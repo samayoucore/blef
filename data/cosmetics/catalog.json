@@ -1,0 +1,246 @@
+[
+  {
+    "id": "round",
+    "name": "Круглые очки",
+    "slot": "EYES",
+    "unlock_points": 1333
+  },
+  {
+    "id": "cap",
+    "name": "Кепка",
+    "slot": "HEAD",
+    "unlock_points": 3333,
+    "scene_path": "res://assets/characters/accessories/head/cap/accessory.tscn",
+    "position_offset": [
+      0,
+      0.23,
+      0.2
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "hamster",
+    "name": "Маска хомяка",
+    "slot": "FACE",
+    "unlock_points": 5333
+  },
+  {
+    "id": "3d",
+    "name": "3D-очки",
+    "slot": "EYES",
+    "unlock_points": 8000
+  },
+  {
+    "id": "hardhat",
+    "name": "Строительная каска",
+    "slot": "HEAD",
+    "unlock_points": 11333,
+    "scene_path": "res://assets/characters/accessories/head/hard_hat/accessory.tscn",
+    "position_offset": [
+      0,
+      -0.12,
+      0
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "incognito",
+    "name": "Маска инкогнито",
+    "slot": "FACE",
+    "unlock_points": 15333
+  },
+  {
+    "id": "pixel",
+    "name": "Пиксельные очки",
+    "slot": "EYES",
+    "unlock_points": 20000,
+    "scene_path": "res://assets/characters/accessories/eyes/pixel_glasses/accessory.tscn",
+    "position_offset": [
+      0,
+      0.06,
+      0.55
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "wizard",
+    "name": "Шляпа волшебника",
+    "slot": "HEAD",
+    "unlock_points": 26667,
+    "scene_path": "res://assets/characters/accessories/head/wizard_hat/accessory.tscn",
+    "position_offset": [
+      0,
+      0.39,
+      0
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "sunglasses",
+    "name": "Солнечные очки",
+    "slot": "EYES",
+    "unlock_points": 4000,
+    "scene_path": "res://assets/characters/accessories/eyes/sunglasses/accessory.tscn",
+    "position_offset": [
+      0,
+      0.06,
+      0.54
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "heart_glasses",
+    "name": "Очки-сердечки",
+    "slot": "EYES",
+    "unlock_points": 6667,
+    "scene_path": "res://assets/characters/accessories/eyes/heart_glasses/accessory.tscn",
+    "position_offset": [
+      0,
+      0.08,
+      0.55
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "beanie",
+    "name": "Вязаная шапка",
+    "slot": "HEAD",
+    "unlock_points": 4667,
+    "scene_path": "res://assets/characters/accessories/head/beanie/accessory.tscn",
+    "position_offset": [
+      0,
+      0.1,
+      0
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      0.72,
+      1
+    ]
+  },
+  {
+    "id": "crown",
+    "name": "Корона",
+    "slot": "HEAD",
+    "unlock_points": 16667,
+    "scene_path": "res://assets/characters/accessories/head/crown/accessory.tscn",
+    "position_offset": [
+      0,
+      0.3,
+      0
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "stylised_hat",
+    "name": "Шляпа",
+    "slot": "HEAD",
+    "unlock_points": 10000,
+    "scene_path": "res://assets/characters/accessories/head/stylised_hat/accessory.tscn",
+    "position_offset": [
+      0,
+      0.29,
+      0
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "mask",
+    "name": "Маска",
+    "slot": "FACE",
+    "unlock_points": 13333,
+    "scene_path": "res://assets/characters/accessories/face/mask/accessory.tscn",
+    "position_offset": [
+      0,
+      -0.04,
+      0.58
+    ],
+    "rotation_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  }
+]
